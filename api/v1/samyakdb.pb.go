@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.2
-// source: proto/gdist.proto
+// source: proto/samyakdb.proto
 
-package gdistv1
+package samyakdbv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -29,7 +29,7 @@ type StatusRequest struct {
 
 func (x *StatusRequest) Reset() {
 	*x = StatusRequest{}
-	mi := &file_proto_gdist_proto_msgTypes[0]
+	mi := &file_proto_samyakdb_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41,7 +41,7 @@ func (x *StatusRequest) String() string {
 func (*StatusRequest) ProtoMessage() {}
 
 func (x *StatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[0]
+	mi := &file_proto_samyakdb_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54,7 +54,7 @@ func (x *StatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusRequest.ProtoReflect.Descriptor instead.
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{0}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{0}
 }
 
 type ClusterStatus struct {
@@ -66,7 +66,7 @@ type ClusterStatus struct {
 
 func (x *ClusterStatus) Reset() {
 	*x = ClusterStatus{}
-	mi := &file_proto_gdist_proto_msgTypes[1]
+	mi := &file_proto_samyakdb_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -78,7 +78,7 @@ func (x *ClusterStatus) String() string {
 func (*ClusterStatus) ProtoMessage() {}
 
 func (x *ClusterStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[1]
+	mi := &file_proto_samyakdb_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -91,7 +91,7 @@ func (x *ClusterStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClusterStatus.ProtoReflect.Descriptor instead.
 func (*ClusterStatus) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{1}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ClusterStatus) GetMembers() []*Member {
@@ -112,7 +112,7 @@ type Member struct {
 
 func (x *Member) Reset() {
 	*x = Member{}
-	mi := &file_proto_gdist_proto_msgTypes[2]
+	mi := &file_proto_samyakdb_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -124,7 +124,7 @@ func (x *Member) String() string {
 func (*Member) ProtoMessage() {}
 
 func (x *Member) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[2]
+	mi := &file_proto_samyakdb_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -137,7 +137,7 @@ func (x *Member) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Member.ProtoReflect.Descriptor instead.
 func (*Member) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{2}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Member) GetName() string {
@@ -171,7 +171,7 @@ type PutRequest struct {
 
 func (x *PutRequest) Reset() {
 	*x = PutRequest{}
-	mi := &file_proto_gdist_proto_msgTypes[3]
+	mi := &file_proto_samyakdb_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -183,7 +183,7 @@ func (x *PutRequest) String() string {
 func (*PutRequest) ProtoMessage() {}
 
 func (x *PutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[3]
+	mi := &file_proto_samyakdb_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -196,7 +196,7 @@ func (x *PutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PutRequest.ProtoReflect.Descriptor instead.
 func (*PutRequest) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{3}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *PutRequest) GetKey() string {
@@ -222,7 +222,7 @@ type PutResponse struct {
 
 func (x *PutResponse) Reset() {
 	*x = PutResponse{}
-	mi := &file_proto_gdist_proto_msgTypes[4]
+	mi := &file_proto_samyakdb_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +234,7 @@ func (x *PutResponse) String() string {
 func (*PutResponse) ProtoMessage() {}
 
 func (x *PutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[4]
+	mi := &file_proto_samyakdb_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *PutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PutResponse.ProtoReflect.Descriptor instead.
 func (*PutResponse) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{4}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *PutResponse) GetSuccess() bool {
@@ -266,7 +266,7 @@ type GetRequest struct {
 
 func (x *GetRequest) Reset() {
 	*x = GetRequest{}
-	mi := &file_proto_gdist_proto_msgTypes[5]
+	mi := &file_proto_samyakdb_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -278,7 +278,7 @@ func (x *GetRequest) String() string {
 func (*GetRequest) ProtoMessage() {}
 
 func (x *GetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[5]
+	mi := &file_proto_samyakdb_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -291,7 +291,7 @@ func (x *GetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRequest.ProtoReflect.Descriptor instead.
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{5}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetRequest) GetKey() string {
@@ -311,7 +311,7 @@ type GetResponse struct {
 
 func (x *GetResponse) Reset() {
 	*x = GetResponse{}
-	mi := &file_proto_gdist_proto_msgTypes[6]
+	mi := &file_proto_samyakdb_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -323,7 +323,7 @@ func (x *GetResponse) String() string {
 func (*GetResponse) ProtoMessage() {}
 
 func (x *GetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[6]
+	mi := &file_proto_samyakdb_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -336,7 +336,7 @@ func (x *GetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResponse.ProtoReflect.Descriptor instead.
 func (*GetResponse) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{6}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetResponse) GetValue() []byte {
@@ -362,7 +362,7 @@ type DeleteRequest struct {
 
 func (x *DeleteRequest) Reset() {
 	*x = DeleteRequest{}
-	mi := &file_proto_gdist_proto_msgTypes[7]
+	mi := &file_proto_samyakdb_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -374,7 +374,7 @@ func (x *DeleteRequest) String() string {
 func (*DeleteRequest) ProtoMessage() {}
 
 func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[7]
+	mi := &file_proto_samyakdb_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -387,7 +387,7 @@ func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRequest) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{7}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeleteRequest) GetKey() string {
@@ -406,7 +406,7 @@ type DeleteResponse struct {
 
 func (x *DeleteResponse) Reset() {
 	*x = DeleteResponse{}
-	mi := &file_proto_gdist_proto_msgTypes[8]
+	mi := &file_proto_samyakdb_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -418,7 +418,7 @@ func (x *DeleteResponse) String() string {
 func (*DeleteResponse) ProtoMessage() {}
 
 func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_gdist_proto_msgTypes[8]
+	mi := &file_proto_samyakdb_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -431,7 +431,7 @@ func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteResponse.ProtoReflect.Descriptor instead.
 func (*DeleteResponse) Descriptor() ([]byte, []int) {
-	return file_proto_gdist_proto_rawDescGZIP(), []int{8}
+	return file_proto_samyakdb_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteResponse) GetSuccess() bool {
@@ -441,14 +441,14 @@ func (x *DeleteResponse) GetSuccess() bool {
 	return false
 }
 
-var File_proto_gdist_proto protoreflect.FileDescriptor
+var File_proto_samyakdb_proto protoreflect.FileDescriptor
 
-const file_proto_gdist_proto_rawDesc = "" +
+const file_proto_samyakdb_proto_rawDesc = "" +
 	"\n" +
-	"\x11proto/gdist.proto\x12\bgdist.v1\"\x0f\n" +
-	"\rStatusRequest\";\n" +
-	"\rClusterStatus\x12*\n" +
-	"\amembers\x18\x01 \x03(\v2\x10.gdist.v1.MemberR\amembers\"H\n" +
+	"\x14proto/samyakdb.proto\x12\vsamyakdb.v1\"\x0f\n" +
+	"\rStatusRequest\">\n" +
+	"\rClusterStatus\x12-\n" +
+	"\amembers\x18\x01 \x03(\v2\x13.samyakdb.v1.MemberR\amembers\"H\n" +
 	"\x06Member\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04addr\x18\x02 \x01(\tR\x04addr\x12\x16\n" +
@@ -468,47 +468,47 @@ const file_proto_gdist_proto_rawDesc = "" +
 	"\rDeleteRequest\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\"*\n" +
 	"\x0eDeleteResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2\xe8\x01\n" +
-	"\x05GDist\x122\n" +
-	"\x03Put\x12\x14.gdist.v1.PutRequest\x1a\x15.gdist.v1.PutResponse\x122\n" +
-	"\x03Get\x12\x14.gdist.v1.GetRequest\x1a\x15.gdist.v1.GetResponse\x12;\n" +
-	"\x06Delete\x12\x17.gdist.v1.DeleteRequest\x1a\x18.gdist.v1.DeleteResponse\x12:\n" +
-	"\x06Status\x12\x17.gdist.v1.StatusRequest\x1a\x17.gdist.v1.ClusterStatusB)Z'github.com/himank/g-dist/api/v1;gdistv1b\x06proto3"
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\x80\x02\n" +
+	"\x05GDist\x128\n" +
+	"\x03Put\x12\x17.samyakdb.v1.PutRequest\x1a\x18.samyakdb.v1.PutResponse\x128\n" +
+	"\x03Get\x12\x17.samyakdb.v1.GetRequest\x1a\x18.samyakdb.v1.GetResponse\x12A\n" +
+	"\x06Delete\x12\x1a.samyakdb.v1.DeleteRequest\x1a\x1b.samyakdb.v1.DeleteResponse\x12@\n" +
+	"\x06Status\x12\x1a.samyakdb.v1.StatusRequest\x1a\x1a.samyakdb.v1.ClusterStatusB2Z0github.com/steel-feel/SamyakDB/api/v1;samyakdbv1b\x06proto3"
 
 var (
-	file_proto_gdist_proto_rawDescOnce sync.Once
-	file_proto_gdist_proto_rawDescData []byte
+	file_proto_samyakdb_proto_rawDescOnce sync.Once
+	file_proto_samyakdb_proto_rawDescData []byte
 )
 
-func file_proto_gdist_proto_rawDescGZIP() []byte {
-	file_proto_gdist_proto_rawDescOnce.Do(func() {
-		file_proto_gdist_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_gdist_proto_rawDesc), len(file_proto_gdist_proto_rawDesc)))
+func file_proto_samyakdb_proto_rawDescGZIP() []byte {
+	file_proto_samyakdb_proto_rawDescOnce.Do(func() {
+		file_proto_samyakdb_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_samyakdb_proto_rawDesc), len(file_proto_samyakdb_proto_rawDesc)))
 	})
-	return file_proto_gdist_proto_rawDescData
+	return file_proto_samyakdb_proto_rawDescData
 }
 
-var file_proto_gdist_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_proto_gdist_proto_goTypes = []any{
-	(*StatusRequest)(nil),  // 0: gdist.v1.StatusRequest
-	(*ClusterStatus)(nil),  // 1: gdist.v1.ClusterStatus
-	(*Member)(nil),         // 2: gdist.v1.Member
-	(*PutRequest)(nil),     // 3: gdist.v1.PutRequest
-	(*PutResponse)(nil),    // 4: gdist.v1.PutResponse
-	(*GetRequest)(nil),     // 5: gdist.v1.GetRequest
-	(*GetResponse)(nil),    // 6: gdist.v1.GetResponse
-	(*DeleteRequest)(nil),  // 7: gdist.v1.DeleteRequest
-	(*DeleteResponse)(nil), // 8: gdist.v1.DeleteResponse
+var file_proto_samyakdb_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_samyakdb_proto_goTypes = []any{
+	(*StatusRequest)(nil),  // 0: samyakdb.v1.StatusRequest
+	(*ClusterStatus)(nil),  // 1: samyakdb.v1.ClusterStatus
+	(*Member)(nil),         // 2: samyakdb.v1.Member
+	(*PutRequest)(nil),     // 3: samyakdb.v1.PutRequest
+	(*PutResponse)(nil),    // 4: samyakdb.v1.PutResponse
+	(*GetRequest)(nil),     // 5: samyakdb.v1.GetRequest
+	(*GetResponse)(nil),    // 6: samyakdb.v1.GetResponse
+	(*DeleteRequest)(nil),  // 7: samyakdb.v1.DeleteRequest
+	(*DeleteResponse)(nil), // 8: samyakdb.v1.DeleteResponse
 }
-var file_proto_gdist_proto_depIdxs = []int32{
-	2, // 0: gdist.v1.ClusterStatus.members:type_name -> gdist.v1.Member
-	3, // 1: gdist.v1.GDist.Put:input_type -> gdist.v1.PutRequest
-	5, // 2: gdist.v1.GDist.Get:input_type -> gdist.v1.GetRequest
-	7, // 3: gdist.v1.GDist.Delete:input_type -> gdist.v1.DeleteRequest
-	0, // 4: gdist.v1.GDist.Status:input_type -> gdist.v1.StatusRequest
-	4, // 5: gdist.v1.GDist.Put:output_type -> gdist.v1.PutResponse
-	6, // 6: gdist.v1.GDist.Get:output_type -> gdist.v1.GetResponse
-	8, // 7: gdist.v1.GDist.Delete:output_type -> gdist.v1.DeleteResponse
-	1, // 8: gdist.v1.GDist.Status:output_type -> gdist.v1.ClusterStatus
+var file_proto_samyakdb_proto_depIdxs = []int32{
+	2, // 0: samyakdb.v1.ClusterStatus.members:type_name -> samyakdb.v1.Member
+	3, // 1: samyakdb.v1.GDist.Put:input_type -> samyakdb.v1.PutRequest
+	5, // 2: samyakdb.v1.GDist.Get:input_type -> samyakdb.v1.GetRequest
+	7, // 3: samyakdb.v1.GDist.Delete:input_type -> samyakdb.v1.DeleteRequest
+	0, // 4: samyakdb.v1.GDist.Status:input_type -> samyakdb.v1.StatusRequest
+	4, // 5: samyakdb.v1.GDist.Put:output_type -> samyakdb.v1.PutResponse
+	6, // 6: samyakdb.v1.GDist.Get:output_type -> samyakdb.v1.GetResponse
+	8, // 7: samyakdb.v1.GDist.Delete:output_type -> samyakdb.v1.DeleteResponse
+	1, // 8: samyakdb.v1.GDist.Status:output_type -> samyakdb.v1.ClusterStatus
 	5, // [5:9] is the sub-list for method output_type
 	1, // [1:5] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -516,26 +516,26 @@ var file_proto_gdist_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_proto_gdist_proto_init() }
-func file_proto_gdist_proto_init() {
-	if File_proto_gdist_proto != nil {
+func init() { file_proto_samyakdb_proto_init() }
+func file_proto_samyakdb_proto_init() {
+	if File_proto_samyakdb_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_gdist_proto_rawDesc), len(file_proto_gdist_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_samyakdb_proto_rawDesc), len(file_proto_samyakdb_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_gdist_proto_goTypes,
-		DependencyIndexes: file_proto_gdist_proto_depIdxs,
-		MessageInfos:      file_proto_gdist_proto_msgTypes,
+		GoTypes:           file_proto_samyakdb_proto_goTypes,
+		DependencyIndexes: file_proto_samyakdb_proto_depIdxs,
+		MessageInfos:      file_proto_samyakdb_proto_msgTypes,
 	}.Build()
-	File_proto_gdist_proto = out.File
-	file_proto_gdist_proto_goTypes = nil
-	file_proto_gdist_proto_depIdxs = nil
+	File_proto_samyakdb_proto = out.File
+	file_proto_samyakdb_proto_goTypes = nil
+	file_proto_samyakdb_proto_depIdxs = nil
 }

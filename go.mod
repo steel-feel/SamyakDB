@@ -1,4 +1,4 @@
-module github.com/himank/g-dist
+module github.com/steel-feel/SamyakDB
 
 go 1.25.5
 

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package gdist.v1;
+package samyakdb.v1;
 
-option go_package = "github.com/himank/g-dist/api/v1;gdistv1";
+option go_package = "github.com/steel-feel/SamyakDB/api/v1;samyakdbv1";
 
 service GDist {
   rpc Put(PutRequest) returns (PutResponse);

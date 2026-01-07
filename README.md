@@ -1,6 +1,6 @@
-# G-Dist
+# SamyakDB
 
-G-Dist is a distributed, strongly consistent Key-Value database designed for high availability and horizontal scalability. It employs a multi-layered architecture using Gossip for membership, Consistent Hashing for data distribution, and Raft for consensus-backed replication.
+SamyakDB is a distributed, strongly consistent Key-Value database designed for high availability and horizontal scalability. It employs a multi-layered architecture using Gossip for membership, Consistent Hashing for data distribution, and Raft for consensus-backed replication.
 
 ## Architecture
 *   **Strong Consistency (CP):** Guarantee that all reads return the most recent write within a shard.
@@ -16,8 +16,8 @@ G-Dist is a distributed, strongly consistent Key-Value database designed for hig
 ### Building the Project
 Build the server and the CLI:
 ```bash
-go build -o g-dist-server ./cmd/server
-go build -o g-dist-cli ./cmd/cli
+go build -o samyakdb-server ./cmd/server
+go build -o samyakdb-cli ./cmd/cli
 ```
 
 ### Running the Server
@@ -25,12 +25,12 @@ Start the G-Dist server. Each node requires a unique name.
 
 **Start the first node:**
 ```bash
-./g-dist-server -name node1
+./samyakdb-server -name node1
 ```
 
 **Start additional nodes and join the cluster:**
 ```bash
-./g-dist-server -name node2 -bind-addr :50052 -gossip-addr :7947 -join-addrs 127.0.0.1:7946
+./samyakdb-server -name node2 -bind-addr :50052 -gossip-addr :7947 -join-addrs 127.0.0.1:7946
 ```
 
 #### Server Flags
@@ -49,25 +49,25 @@ The G-Dist CLI allows you to interact with the database from the terminal.
 
 **Put a key-value pair:**
 ```bash
-./g-dist-cli put <key> <value>
+./samyakdb-cli put <key> <value>
 ```
-Example: `./g-dist-cli put mykey myvalue`
+Example: `./samyakdb-cli put mykey myvalue`
 
 **Get a value by key:**
 ```bash
-./g-dist-cli get <key>
+./samyakdb-cli get <key>
 ```
-Example: `./g-dist-cli get mykey`
+Example: `./samyakdb-cli get mykey`
 
 **Delete a key-value pair:**
 ```bash
-./g-dist-cli delete <key>
+./samyakdb-cli delete <key>
 ```
-Example: `./g-dist-cli delete mykey`
+Example: `./samyakdb-cli delete mykey`
 
 **Check cluster status:**
 ```bash
-./g-dist-cli status
+./samyakdb-cli status
 ```
 
 

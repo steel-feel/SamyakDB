@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.0
 // - protoc             v6.33.2
-// source: proto/gdist.proto
+// source: proto/samyakdb.proto
 
-package gdistv1
+package samyakdbv1
 
 import (
 	context "context"
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	GDist_Put_FullMethodName    = "/gdist.v1.GDist/Put"
-	GDist_Get_FullMethodName    = "/gdist.v1.GDist/Get"
-	GDist_Delete_FullMethodName = "/gdist.v1.GDist/Delete"
-	GDist_Status_FullMethodName = "/gdist.v1.GDist/Status"
+	GDist_Put_FullMethodName    = "/samyakdb.v1.GDist/Put"
+	GDist_Get_FullMethodName    = "/samyakdb.v1.GDist/Get"
+	GDist_Delete_FullMethodName = "/samyakdb.v1.GDist/Delete"
+	GDist_Status_FullMethodName = "/samyakdb.v1.GDist/Status"
 )
 
 // GDistClient is the client API for GDist service.
@@ -210,7 +210,7 @@ func _GDist_Status_Handler(srv interface{}, ctx context.Context, dec func(interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GDist_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "gdist.v1.GDist",
+	ServiceName: "samyakdb.v1.GDist",
 	HandlerType: (*GDistServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -231,5 +231,5 @@ var GDist_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/gdist.proto",
+	Metadata: "proto/samyakdb.proto",
 }

@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/himank/g-dist/api/v1"
 	"github.com/spf13/cobra"
+	pb "github.com/steel-feel/SamyakDB/api/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -18,7 +18,7 @@ var (
 )
 
 func main() {
-	rootCmd := &cobra.Command{Use: "g-dist-cli"}
+	rootCmd := &cobra.Command{Use: "samyakdb-cli"}
 	rootCmd.PersistentFlags().StringVar(&addr, "addr", "localhost:50051", "server address")
 
 	putCmd := &cobra.Command{

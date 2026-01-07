@@ -8,9 +8,9 @@ import (
 	"net"
 	"strings"
 
-	pb "github.com/himank/g-dist/api/v1"
-	"github.com/himank/g-dist/pkg/discovery"
-	"github.com/himank/g-dist/pkg/storage"
+	pb "github.com/steel-feel/SamyakDB/api/v1"
+	"github.com/steel-feel/SamyakDB/pkg/discovery"
+	"github.com/steel-feel/SamyakDB/pkg/storage"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
