@@ -8,6 +8,19 @@ service GDist {
   rpc Put(PutRequest) returns (PutResponse);
   rpc Get(GetRequest) returns (GetResponse);
   rpc Delete(DeleteRequest) returns (DeleteResponse);
+  rpc Status(StatusRequest) returns (ClusterStatus);
+}
+
+message StatusRequest {}
+
+message ClusterStatus {
+  repeated Member members = 1;
+}
+
+message Member {
+  string name = 1;
+  string addr = 2;
+  string status = 3;
 }
 
 message PutRequest {

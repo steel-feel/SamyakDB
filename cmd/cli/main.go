@@ -76,7 +76,26 @@ func main() {
 		},
 	}
 
-	rootCmd.AddCommand(putCmd, getCmd, deleteCmd)
+	statusCmd := &cobra.Command{
+		Use:   "status",
+		Short: "Get cluster status",
+		Run: func(cmd *cobra.Command, args []string) {
+			conn, client := getClient()
+			defer conn.Close()
+			ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+			defer cancel()
+			resp, err := client.Status(ctx, &pb.StatusRequest{})
+			if err != nil {
+				log.Fatalf("could not get status: %v", err)
+			}
+			fmt.Printf("Cluster Status: %d nodes\n", len(resp.Members))
+			for _, m := range resp.Members {
+				fmt.Printf("- %s: %s (status: %s)\n", m.Name, m.Addr, m.Status)
+			}
+		},
+	}
+
+	rootCmd.AddCommand(putCmd, getCmd, deleteCmd, statusCmd)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

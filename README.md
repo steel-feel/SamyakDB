@@ -21,11 +21,23 @@ go build -o g-dist-cli ./cmd/cli
 ```
 
 ### Running the Server
-Start the G-Dist server:
+Start the G-Dist server. Each node requires a unique name.
+
+**Start the first node:**
 ```bash
-./g-dist-server
+./g-dist-server -name node1
 ```
-The server will start listening on `:50051` by default.
+
+**Start additional nodes and join the cluster:**
+```bash
+./g-dist-server -name node2 -bind-addr :50052 -gossip-addr :7947 -join-addrs 127.0.0.1:7946
+```
+
+#### Server Flags
+- `-name`: Unique name for this node (required).
+- `-bind-addr`: Address to bind gRPC server (default "127.0.0.1:50051").
+- `-gossip-addr`: Address to bind gossip (default "127.0.0.1:7946").
+- `-join-addrs`: Comma-separated list of gossip addresses to join.
 
 ### CLI Usage
 The G-Dist CLI allows you to interact with the database from the terminal.
@@ -52,5 +64,10 @@ Example: `./g-dist-cli get mykey`
 ./g-dist-cli delete <key>
 ```
 Example: `./g-dist-cli delete mykey`
+
+**Check cluster status:**
+```bash
+./g-dist-cli status
+```
 
 

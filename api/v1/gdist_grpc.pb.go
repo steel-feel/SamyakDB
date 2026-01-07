@@ -22,6 +22,7 @@ const (
 	GDist_Put_FullMethodName    = "/gdist.v1.GDist/Put"
 	GDist_Get_FullMethodName    = "/gdist.v1.GDist/Get"
 	GDist_Delete_FullMethodName = "/gdist.v1.GDist/Delete"
+	GDist_Status_FullMethodName = "/gdist.v1.GDist/Status"
 )
 
 // GDistClient is the client API for GDist service.
@@ -31,6 +32,7 @@ type GDistClient interface {
 	Put(ctx context.Context, in *PutRequest, opts ...grpc.CallOption) (*PutResponse, error)
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
+	Status(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*ClusterStatus, error)
 }
 
 type gDistClient struct {
@@ -71,6 +73,16 @@ func (c *gDistClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grp
 	return out, nil
 }
 
+func (c *gDistClient) Status(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*ClusterStatus, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ClusterStatus)
+	err := c.cc.Invoke(ctx, GDist_Status_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GDistServer is the server API for GDist service.
 // All implementations must embed UnimplementedGDistServer
 // for forward compatibility.
@@ -78,6 +90,7 @@ type GDistServer interface {
 	Put(context.Context, *PutRequest) (*PutResponse, error)
 	Get(context.Context, *GetRequest) (*GetResponse, error)
 	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
+	Status(context.Context, *StatusRequest) (*ClusterStatus, error)
 	mustEmbedUnimplementedGDistServer()
 }
 
@@ -96,6 +109,9 @@ func (UnimplementedGDistServer) Get(context.Context, *GetRequest) (*GetResponse,
 }
 func (UnimplementedGDistServer) Delete(context.Context, *DeleteRequest) (*DeleteResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Delete not implemented")
+}
+func (UnimplementedGDistServer) Status(context.Context, *StatusRequest) (*ClusterStatus, error) {
+	return nil, status.Error(codes.Unimplemented, "method Status not implemented")
 }
 func (UnimplementedGDistServer) mustEmbedUnimplementedGDistServer() {}
 func (UnimplementedGDistServer) testEmbeddedByValue()               {}
@@ -172,6 +188,24 @@ func _GDist_Delete_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _GDist_Status_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GDistServer).Status(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GDist_Status_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GDistServer).Status(ctx, req.(*StatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // GDist_ServiceDesc is the grpc.ServiceDesc for GDist service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -190,6 +224,10 @@ var GDist_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Delete",
 			Handler:    _GDist_Delete_Handler,
+		},
+		{
+			MethodName: "Status",
+			Handler:    _GDist_Status_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

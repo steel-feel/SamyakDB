@@ -1,2 +1,3 @@
 g-dist-cli
 g-dist-server
+*.log
