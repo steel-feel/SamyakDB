@@ -52,3 +52,13 @@ func (s *Storage) Delete(key string) bool {
 	_, found := s.tree.Delete(Item{Key: key})
 	return found
 }
+
+// Iterate traverses the storage and executes the callback for each item.
+// If the callback returns false, iteration stops.
+func (s *Storage) Iterate(fn func(key string, value []byte) bool) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	s.tree.Ascend(func(item Item) bool {
+		return fn(item.Key, item.Value)
+	})
+}
