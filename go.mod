@@ -4,6 +4,7 @@ go 1.25.5
 
 require (
 	github.com/google/btree v1.1.3
+	github.com/hashicorp/memberlist v0.5.4
 	github.com/spf13/cobra v1.10.2
 	google.golang.org/grpc v1.78.0
 	google.golang.org/protobuf v1.36.10
@@ -18,7 +19,6 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-sockaddr v1.0.7 // indirect
 	github.com/hashicorp/golang-lru v0.5.0 // indirect
-	github.com/hashicorp/memberlist v0.5.4 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/miekg/dns v1.1.68 // indirect
 	github.com/sean-/seed v0.0.0-20170313163322-e2103e2c3529 // indirect

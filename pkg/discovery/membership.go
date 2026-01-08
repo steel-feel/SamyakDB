@@ -3,6 +3,7 @@ package discovery
 import (
 	"fmt"
 	"net"
+	"strings"
 
 	"github.com/hashicorp/memberlist"
 )
@@ -21,7 +22,7 @@ type Config struct {
 }
 
 type Handler interface {
-	Join(name, addr string) error
+	Join(name, addr string, tags map[string]string) error
 	Leave(name string) error
 }
 
@@ -58,6 +59,9 @@ func (m *Membership) setupMemberlist() error {
 	conf.Events = &eventHandler{
 		handler: m.handler,
 	}
+	conf.Delegate = &delegate{
+		tags: m.Config.Tags,
+	}
 	
 	list, err := memberlist.Create(conf)
 	if err != nil {
@@ -73,13 +77,57 @@ func (m *Membership) setupMemberlist() error {
 	return nil
 }
 
+type delegate struct {
+	tags map[string]string
+}
+
+func (d *delegate) NodeMeta(limit int) []byte {
+	// Simple comma-separated key=value pairs for metadata
+	var meta string
+	for k, v := range d.tags {
+		if meta != "" {
+			meta += ","
+		}
+		meta += fmt.Sprintf("%s=%s", k, v)
+	}
+	return []byte(meta)
+}
+
+func (d *delegate) NotifyMsg([]byte) {}
+
+func (d *delegate) GetBroadcasts(overhead, limit int) [][]byte {
+	return nil
+}
+
+func (d *delegate) LocalState(join bool) []byte {
+	return nil
+}
+
+func (d *delegate) MergeRemoteState(buf []byte, join bool) {}
+
 type eventHandler struct {
 	handler Handler
 }
 
+func decodeMeta(meta []byte) map[string]string {
+	tags := make(map[string]string)
+	if len(meta) == 0 {
+		return tags
+	}
+	pairs := strings.Split(string(meta), ",")
+	for _, pair := range pairs {
+		kv := strings.Split(pair, "=")
+		if len(kv) == 2 {
+			tags[kv[0]] = kv[1]
+		}
+	}
+	return tags
+}
+
 func (e *eventHandler) NotifyJoin(node *memberlist.Node) {
 	if e.handler != nil {
-		e.handler.Join(node.Name, node.Address())
+		tags := decodeMeta(node.Meta)
+		e.handler.Join(node.Name, node.Address(), tags)
 	}
 }
 
